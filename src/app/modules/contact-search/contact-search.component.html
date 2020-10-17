@@ -1,0 +1,195 @@
+
+<mat-sidenav-container autosize>
+  <mat-sidenav
+    #sidenav
+    mode="side"
+    class="example-sidenav"
+    [ngClass]="{'nav-close-bar-main' : sidenavWidth == 4}"
+    [ngStyle]="{ 'width.em': sidenavWidth }"
+    opened="true"
+
+  >
+  <!--   <div class="arrHeader" *ngIf="sidenavWidth > 4">
+      <h3>&nbsp;</h3>
+     
+    </div> -->
+    <div class="subHeader" *ngIf="sidenavWidth > 4">
+      <h3>Filters</h3>
+      <div class="btnSubHeader">
+        <button type="button" class="btn btn--grey">Load</button>
+        <button type="button" class="btn btn--green">Save</button>
+         <mat-icon (click) = "toggleNavWidth()">keyboard_arrow_left</mat-icon>
+      </div>
+    </div>
+    <div class="subHeader" *ngIf="sidenavWidth == 4">
+      <mat-icon (click) = "toggleNavWidth()">keyboard_arrow_right</mat-icon>
+    </div>
+    <mat-selection-list [multiple]="false">
+      <mat-list-option (click) = "onShowDialog($event)">
+        <mat-icon mat-list-icon>business</mat-icon>
+        <div mat-line *ngIf="sidenavWidth > 4">Industry</div>
+      </mat-list-option>
+      <mat-list-option (click) = "onShowLocDialog($event)">
+        <mat-icon mat-list-icon>location_on</mat-icon>
+        <div mat-line *ngIf="sidenavWidth > 4">Location</div>
+      </mat-list-option>
+      <mat-list-option (click) = "onShowAgeOfFirmDialog($event)">
+        <mat-icon mat-list-icon>date_range</mat-icon>
+        <div mat-line *ngIf="sidenavWidth > 4">Age of Firm</div>
+      </mat-list-option>
+      <mat-list-option (click) = "onShowEntityTypeDialog($event)">
+        <mat-icon mat-list-icon>category</mat-icon>
+        <div mat-line *ngIf="sidenavWidth > 4">Entity Type</div>
+      </mat-list-option>
+      <mat-list-option (click) = "onShowGendereDialog($event)">
+        <mat-icon mat-list-icon>wc</mat-icon>
+        <div mat-line *ngIf="sidenavWidth > 4">Gender</div>
+      </mat-list-option>
+      <mat-list-option (click) = "onShowPlanAndMachineryDialog($event)">
+        <mat-icon mat-list-icon>palette</mat-icon>
+        <div mat-line *ngIf="sidenavWidth > 4">Plant & Machinery</div>
+      </mat-list-option>
+      <mat-list-option (click) = "onShowBranchesCountDialog($event)">
+        <mat-icon mat-list-icon>account_tree</mat-icon>
+        <div mat-line *ngIf="sidenavWidth > 4">Branches Count</div>
+      </mat-list-option>
+      <mat-list-option (click) = "onShowEmployeesCountDialog($event)">
+        <mat-icon mat-list-icon>people</mat-icon>
+        <div mat-line *ngIf="sidenavWidth > 4">Employees Count</div>
+      </mat-list-option>
+      <mat-list-option (click) = "onShowBankingWithDialog($event)">
+        <mat-icon mat-list-icon>monetization_on</mat-icon>
+        <div mat-line *ngIf="sidenavWidth > 4">Banking with</div>
+      </mat-list-option>
+   
+      <mat-divider></mat-divider>
+    
+    <!--   <mat-list-option class="btnSaveFilters">
+        <mat-icon mat-list-icon>check</mat-icon>
+        <div mat-line *ngIf="sidenavWidth > 4">Save Filters</div>
+      </mat-list-option> -->
+      <mat-list-option class="btClearFilters">
+        <mat-icon mat-list-icon>clear</mat-icon>
+        <div mat-line *ngIf="sidenavWidth > 4">Clear all Filters</div>
+      </mat-list-option>
+    </mat-selection-list>
+  </mat-sidenav>
+
+  <!-- Content -->
+  <mat-sidenav-content  [ngClass]="{'nav-close-bar' : sidenavWidth == 4}">
+    <div class="right-content-main"   fxLayout="row"   fxFlexFill>
+      <div   fxFlex >
+        <div class="search-data-table">
+          <div class="empty-page"  *ngIf="!showSearcData">
+            <ul>
+         <li><mat-icon>keyboard_arrow_left</mat-icon>Most searched combination.</li>
+            <li><mat-icon>keyboard_arrow_left</mat-icon>MSMEs with proven digital footprints like 'registered with Amazon".</li>
+            <li><mat-icon>keyboard_arrow_left</mat-icon>MSMEs who are also Star Exporters.</li>
+            <li><mat-icon>keyboard_arrow_left</mat-icon>Dealers & Distributors of Cement, TMT, and other building materials.</li>
+            <li><mat-icon>keyboard_arrow_left</mat-icon>Partnerships with more than 1 branch or location</li>
+            <li><mat-icon>keyboard_arrow_left</mat-icon>Producer companies involved in Organic Farming</li>
+            <li><mat-icon>keyboard_arrow_left</mat-icon>Dealers & Distributors of Cement, TMT, and other building materials.</li>
+            </ul>
+           
+           
+          </div>
+          <div class="search-table"  *ngIf="showSearcData">
+            <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            
+
+              <ng-container matColumnDef="contactUrl">
+                <th mat-header-cell *matHeaderCellDef> </th>
+                <td mat-cell *matCellDef="let element"> <img [src]="element.contactUrl"/></td>
+              </ng-container>
+
+              <!-- Position Column -->
+              <ng-container matColumnDef="contact"> 
+                <mat-header-cell *matHeaderCellDef > Contact</mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.contact}} </mat-cell>
+              </ng-container>
+
+              <ng-container matColumnDef="imageUrl">
+                <th mat-header-cell *matHeaderCellDef> </th>
+                <td mat-cell *matCellDef="let element"> <img [src]="element.imageUrl"/></td>
+              </ng-container>
+              
+              <!-- Name Column -->
+              <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef> Company Name </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+              </ng-container>
+
+              <!-- Weight Column -->
+              <ng-container matColumnDef="title">
+                <mat-header-cell *matHeaderCellDef > <span class="title-padding">Title </span></mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.title}} </mat-cell>
+              </ng-container>
+
+              <!-- Symbol Column -->
+              <ng-container matColumnDef="phone">
+                <mat-header-cell *matHeaderCellDef> Phone </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.phone}} </mat-cell>
+              </ng-container>
+
+              <!-- Email Column -->
+              <ng-container matColumnDef="email">
+                <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+              </ng-container>
+
+              <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+              <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+            </mat-table>
+          </div>
+        </div>
+      </div>
+      <div class="charts-statistics"   fxFlex="35" >
+        <div class="heading" >
+          Search Result : 9234 Prospects
+        </div>
+        <app-charts></app-charts>
+      <div class="form-right-chart"> 
+            <h4 >Optimise Your cost</h4>
+          <form>
+            <div class="form-row">
+              <label>Change Quantity</label>
+              <input class="form-control" type="text" id="fname" name="fname" value="">
+            </div>
+            <div class="form-row">
+              <label>Basic</label>
+              <input class="form-control" type="text" id="lname" name="lname" value="">
+            </div>
+            
+            
+             <span class="checkbox-inline">
+               Inclusion
+              <label class="checkbox-inline mail">
+                <input type="checkbox" value="" checked>Email
+              </label>
+              <label class="checkbox-inline">
+                <input type="checkbox" value="" >Mobile
+              </label>
+             </span>
+                
+          </form>
+        </div>
+         <div class="right-content">
+          <div style="display: block;font-weight: 500;">
+           Rs: <span class="price">18980</span>
+           <button  mat-flat-button>Place Order</button>
+          </div>
+          <div class="content-below">
+           <small>
+            Tat : 15mins <br>
+            Once order is placed, we will validate the emails
+              against ZeroBounce, which assures 98% or more
+              email deliverability rate. Once Output is ready, it will
+              be emailed to your registered email id
+           </small> 
+          </div>
+        </div>
+      </div>
+     
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

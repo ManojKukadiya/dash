@@ -1,0 +1,46 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <span class="logo" >
+        <img src="../../../../assets/logo.png" alt="" width="200px" height="40px" (click) = "toggleSideNav()"> 
+    </span>
+    <!-- <mat-icon class="icon-btn" (click) = "toggleSideNav()">menu</mat-icon> -->
+    <!-- <input type="text" placeholder="Search for a street" [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let street of filteredStreets | async" [value]="street">
+        {{street}}
+      </mat-option>
+  </mat-autocomplete> -->
+
+    <div fxFlex fxLayout = "row" fxLayoutAlign = "flex-end">
+      <ul fxLayout = "row" fxLayoutGap="20px">
+        <li>
+          <mat-icon class="icon-btn">settings</mat-icon>
+        </li>
+        <li>
+          <mat-icon class="icon-btn">help_outline</mat-icon>
+        </li>
+       
+      </ul>
+    </div>
+  </mat-toolbar-row>
+  <mat-toolbar-row class="toolbar-second-row">
+    <div fxFlex fxLayout fxLayoutAlign="start" fxHide.xs>
+      <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+        
+          <li >
+              <a routerLink="/" routerLinkActive="underLine">Browse</a>
+          </li>
+          <li>
+              <a routerLink="/orderHistory">Order History</a>
+          </li>
+      </ul>
+  </div>
+   <!-- <a href="#">Browse</a>
+    <span style="margin-left: 3rem;"></span>
+    <a href="#">Order History</a> -->
+    <!-- <mat-tab-group>
+      <mat-tab label="Browse">   </mat-tab>
+      <mat-tab label="Second"></mat-tab>
+    </mat-tab-group> -->
+  </mat-toolbar-row>
+</mat-toolbar>

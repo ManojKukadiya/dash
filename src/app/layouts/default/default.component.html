@@ -1,0 +1,15 @@
+<mat-drawer class="left-most-sidebar" mode="side" opened [ngStyle]="{ 'width.px':  leftsidenavWidth}">
+	<span class="shadow"></span>
+  <app-sidebar [sidebarWidth] = " leftsidenavWidth"></app-sidebar>
+</mat-drawer>
+<div class="section-right">
+  <app-header (navbarWidthChanged)="toggleSidebar($event)"></app-header>
+  <mat-drawer-container class="example-container" autosize>
+      <mat-drawer-content>
+        <router-outlet></router-outlet>
+      </mat-drawer-content>
+    </mat-drawer-container>
+</div>
+
+
+<!-- <app-footer></app-footer> -->

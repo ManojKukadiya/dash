@@ -1,0 +1,121 @@
+<div mat-dialog-content>
+  <div class="dialog-header">
+    <h2>Location</h2>
+    <div class="dialog-header">
+       <button type="button" class="btn btn--green" (click) = "applyFilters()">
+      Apply
+    </button>
+     <a class="btn btn--green clear-bt">Clear Filters</a>
+    </div>
+   
+  </div>
+  
+  <mat-divider></mat-divider>
+  <mat-accordion>
+    <div class="toggle-location">
+      <mat-slide-toggle (change) = "toggleLocation($event)">{{locationType}}</mat-slide-toggle>
+      <p>{{locationMessage}}</p>
+    </div>
+    <!-- By Metro Cities -->
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          By Metro Cities
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-list>
+        <mat-list-item> <mat-checkbox>AMER</mat-checkbox> </mat-list-item>
+        <mat-list-item> <mat-checkbox>APAC</mat-checkbox> </mat-list-item>
+        <mat-list-item> <mat-checkbox>EMEA</mat-checkbox> </mat-list-item>
+        <mat-list-item> <mat-checkbox>LATAM</mat-checkbox> </mat-list-item>
+       </mat-list>
+    </mat-expansion-panel>
+    <!-- By Tier I Cities -->
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          By Tier I Cities
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-list>
+        <mat-list-item> <mat-checkbox>AMER</mat-checkbox> </mat-list-item>
+        <mat-list-item> <mat-checkbox>APAC</mat-checkbox> </mat-list-item>
+        <mat-list-item> <mat-checkbox>EMEA</mat-checkbox> </mat-list-item>
+        <mat-list-item> <mat-checkbox>LATAM</mat-checkbox> </mat-list-item>
+       </mat-list>
+    </mat-expansion-panel>
+    <!-- By Tier II Cities -->
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          By Tier II Cities
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-list>
+        <mat-list-item> <mat-checkbox>AMER</mat-checkbox> </mat-list-item>
+        <mat-list-item> <mat-checkbox>APAC</mat-checkbox> </mat-list-item>
+        <mat-list-item> <mat-checkbox>EMEA</mat-checkbox> </mat-list-item>
+        <mat-list-item> <mat-checkbox>LATAM</mat-checkbox> </mat-list-item>
+       </mat-list>
+    </mat-expansion-panel>
+    <!-- By Tier III Cities -->
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          By Tier III Cities
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-list>
+        <mat-list-item> <mat-checkbox>AMER</mat-checkbox> </mat-list-item>
+        <mat-list-item> <mat-checkbox>APAC</mat-checkbox> </mat-list-item>
+        <mat-list-item> <mat-checkbox>EMEA</mat-checkbox> </mat-list-item>
+        <mat-list-item> <mat-checkbox>LATAM</mat-checkbox> </mat-list-item>
+       </mat-list>
+    </mat-expansion-panel>
+    <!-- By State -->
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          By State
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-list>
+        <mat-list-item> <mat-checkbox>AMER</mat-checkbox> </mat-list-item>
+        <mat-list-item> <mat-checkbox>APAC</mat-checkbox> </mat-list-item>
+        <mat-list-item> <mat-checkbox>EMEA</mat-checkbox> </mat-list-item>
+        <mat-list-item> <mat-checkbox>LATAM</mat-checkbox> </mat-list-item>
+       </mat-list>
+    </mat-expansion-panel>
+    <!-- By City -->
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          By City
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-list>
+        <mat-list-item> <mat-checkbox>AMER</mat-checkbox> </mat-list-item>
+        <mat-list-item> <mat-checkbox>APAC</mat-checkbox> </mat-list-item>
+        <mat-list-item> <mat-checkbox>EMEA</mat-checkbox> </mat-list-item>
+        <mat-list-item> <mat-checkbox>LATAM</mat-checkbox> </mat-list-item>
+       </mat-list>
+    </mat-expansion-panel>
+    <!-- Enter Pin-code -->
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Enter Pin-code
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>Enter zip code(s) below</p>
+
+      <div class="zip-code">
+        <mat-form-field>
+          <input color="primary" matInput type="text" placeholder="Comma Separated">
+        </mat-form-field>
+      </div>
+    </mat-expansion-panel>
+    <!-- End Outer Panel -->
+  </mat-accordion>
+
+</div>

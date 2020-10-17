@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+body{    padding: 0;
+    margin: 0;}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap');
+html, body { height: 100%; padding-top: 0;font-family: 'Inter', sans-serif;}
+.mat-toolbar { background: #fff; font-family: 'Inter', sans-serif;}
+.material-icons { font-size: 20px; }
+
+
+

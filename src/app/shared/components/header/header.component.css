@@ -1,0 +1,86 @@
+
+
+.example-icon {
+  padding: 0 14px;
+}
+.logo{
+  margin-top: 6px;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.icon-btn {
+  cursor: pointer;
+}
+ul li {
+  list-style: none;
+}
+
+:host ::ng-deep .mat-tab-label {
+  height: 2rem !important;
+  min-width: 2px!important;
+  font-weight: bold;
+  font-size: large;
+  padding: 5px;
+  
+}
+
+/* Styles for the active tab label */
+:host ::ng-deep .mat-tab-label.mat-tab-label-active {
+  border-bottom: 3px solid #5bc3b4;
+  color: #5bc3b4;
+  border-spacing: 15px;
+  box-sizing: border-box;
+  
+ 
+}
+
+/* Styles for the ink bar */
+:host ::ng-deep .mat-ink-bar {
+  display: none !important;
+}
+.toolbar-second-row{
+   
+    max-height: 38px;
+    min-height: 38px;
+}
+mat-toolbar{
+  
+  margin-bottom: 5px;
+ box-shadow:  1px 1px #ebe9e9;
+   margin-bottom: 4px !important;
+}
+.mat-toolbar, .mat-toolbar h1, .mat-toolbar h2, .mat-toolbar h3, .mat-toolbar h4, .mat-toolbar h5, .mat-toolbar h6 {
+   font-size: 13px;
+  font-family: 'Inter', sans-serif;
+    letter-spacing: normal;
+    margin: 0;
+}
+a {
+  text-decoration: none;
+  color: rgb(88, 82, 82);
+}
+a:hover, a:active{
+  color: rgb(3, 3, 3);
+  
+}
+.underLine{
+  border-bottom: 2px solid #1991EB;
+  color:#1991EB ;
+  padding-bottom:10px;
+
+}
+.navigation-items{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+mat-toolbar{
+  border-radius: 3px;
+}
+@media(max-width: 959px){
+  mat-toolbar{
+      border-radius: 0px;
+  }
+}

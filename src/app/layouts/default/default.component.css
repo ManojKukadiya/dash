@@ -1,0 +1,36 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+ 
+}
+
+.left-most-sidebar {     background: #F7F9FB; }
+.left-most-sidebar .shadow { width: 10px;
+    height: 100%;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    background: linear-gradient(90deg, rgba(196,196,196,0.36) 0%, rgba(196,196,196,0) 53.33%);
+    position: absolute;
+    right: 0;
+    z-index: 9; }
+
+mat-drawer {
+  width: 210px;
+}
+
+mat-drawer-container {
+
+  /* margin-left: 20px; */
+}
+
+mat-drawer-content {
+  padding: 0px;
+  
+}
+
+mat-drawer-inner-container {
+  overflow: hidden;
+}
+.section-right{
+  margin-left: 3rem;
+}

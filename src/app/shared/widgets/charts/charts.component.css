@@ -1,0 +1,12 @@
+.charts{
+    /* display: flex; */
+    
+    
+}
+
+@media only screen and (max-width: 991px) {
+
+.highcharts{display: block !important;}
+
+}
+
