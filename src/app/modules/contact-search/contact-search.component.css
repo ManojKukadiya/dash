@@ -322,10 +322,11 @@ mat-header-row{ background: #1991EB; }
   margin-top: 5px;
   font-weight: 500;
 }
-.mat-cell {  color: rgba(101,101,101,0.81); }
+.mat-cell {  color: rgba(101,101,101,0.81);     font-size: 13px;}
+.mat-cell.cdk-column-phone { margin-left: -45px; }
 mat-header-cell{
   margin-left: 5px;
-  font-size: 14px; 
+  font-size: 13px; 
   font-weight: 500;
       color: #fff;
   text-align: center;
