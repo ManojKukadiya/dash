@@ -12,12 +12,12 @@
   
   <mat-divider></mat-divider>
   <mat-accordion>
-    <div class="toggle-location">
+    <!-- div class="toggle-location">
       <mat-slide-toggle (change) = "toggleLocation($event)">{{locationType}}</mat-slide-toggle>
       <p>{{locationMessage}}</p>
-    </div>
+    </div -->
     <!-- By Metro Cities -->
-    <mat-expansion-panel>
+    <mat-expansion-panel [expanded]="true">
       <mat-expansion-panel-header>
         <mat-panel-title>
           By Metro Cities
