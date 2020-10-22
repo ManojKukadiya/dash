@@ -1,0 +1,24 @@
+h1{font: 500 20px/32px Roboto, "Helvetica Neue", sans-serif;
+    letter-spacing: normal;}
+.mat-dialog-container { min-width: 500px; }
+.save.content {  font-weight: 500; }
+.content { padding-top: 5px; }
+.content > span{ font-weight: 500;display: block; }
+.form-group { padding-top: 10px; }
+.form-group.inline label{  display:block; }
+
+
+.form-group.inline input, .form-group.inline select{  height: 25px;border: 1px solid #b8bcbe;width: 100%; }
+.form-group.inline select { height: 30px; }
+.buttons {     margin-top: 30px;padding-top: 20px; border-top: 1px solid rgba(0,0,0,.12);}
+.buttons  a{    border-radius: 3px;
+
+    padding:4px 10px;
+    text-align: center;
+    transition: all 0.2s ease;
+    cursor: pointer;    background-color: #1991EB;
+    border: 1px solid #1991EB;
+    color: #fff;text-decoration: none;margin-right: 10px;text-transform: capitalize;display: inline-block;}
+
+  .buttons  a.cancel{border: 1px solid #D3DAE3;background-color: transparent;    color: #5D6A7E;}
+
