@@ -11,6 +11,8 @@ import { GenderDialogComponent } from './gender-dialog/gender-dialog.component';
 import { BankingWithDialogComponent } from './banking-with-dialog/banking-with-dialog.component';
 import { EntityTypeDialogComponent } from './entity-type-dialog/entity-type-dialog.component';
 import { AgeOfFirmDialogComponent } from './age-of-firm-dialog/age-of-firm-dialog.component';
+import { LoadDialogComponent } from './load-dialog.component';
+import { SaveDialogComponent } from './save-dialog/save-dialog.component';
 
 export interface Companies {
   contact: string;
@@ -74,6 +76,22 @@ export class ContactSearchComponent implements OnInit, OnDestroy {
 
   toggleNavWidth() {
     this.sidenavWidth = this.sidenavWidth === 4 ? this.sidenavWidth = 18.5 : this.sidenavWidth = 4;
+  }
+
+  loadDialog() {
+    this.dialog.open(LoadDialogComponent, {
+      data: {
+        animal: 'panda'
+      }
+    });
+  }
+
+  saveDialog() {
+    this.dialog.open(SaveDialogComponent, {
+      data: {
+        animal: 'panda'
+      }
+    });
   }
 
   onShowDialog(evt: MouseEvent): void {

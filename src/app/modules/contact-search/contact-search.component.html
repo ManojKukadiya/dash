@@ -16,12 +16,12 @@
     <div class="subHeader" *ngIf="sidenavWidth > 4">
       <h3>Filters</h3>
       <div class="btnSubHeader">
-        <button type="button" class="btn btn--grey">Load</button>
-        <button type="button" class="btn btn--green">Save</button>
+        <button type="button" class="btn btn--grey" (click)="loadDialog()">Load</button>
+        <button type="button" class="btn btn--green" (click)="saveDialog()">Save</button>
          <mat-icon (click) = "toggleNavWidth()">keyboard_arrow_left</mat-icon>
       </div>
     </div>
-    <div class="subHeader" *ngIf="sidenavWidth == 4">
+    <div class="subHeader" *ngIf="sidenavWidth == 4"  >
       <mat-icon (click) = "toggleNavWidth()">keyboard_arrow_right</mat-icon>
     </div>
     <mat-selection-list [multiple]="false">

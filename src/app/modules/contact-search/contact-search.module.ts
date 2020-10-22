@@ -6,11 +6,15 @@ import {MatIconModule} from '@angular/material/icon';
 
 import { ContactMainComponent } from './contact-main/contact-main.component';
 import { ContactSidebarComponent } from './contact-sidebar/contact-sidebar.component';
+import { LoadDialogComponent } from './load-dialog.component';
+import { SaveDialogComponent } from './save-dialog/save-dialog.component';
 
 @NgModule({
   declarations: [
     ContactSidebarComponent,
-    ContactMainComponent
+    ContactMainComponent,
+    LoadDialogComponent,
+    SaveDialogComponent
   ],
   imports: [
     CommonModule,
