@@ -190,7 +190,7 @@ example-sidenav-content {
 
 .charts-statistics {
   width: 28%;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 .filter__tree {
   background-color: #fff;
@@ -289,6 +289,7 @@ h3 {
   background-color: rgb(243, 240, 240);
   margin-bottom: 0;
   padding: 20px;
+  padding-top: 0;
 }
 mat-header-row{ background: #1991EB; }
 .form-right-chart{ background: #f2f2f2; }
@@ -298,7 +299,7 @@ mat-header-row{ background: #1991EB; }
 .form-row input.form-control{ height: 26px;border: 2px solid #1991eb !important;width:96%;    border-radius: 0 !important;    background-color: rgb(243, 240, 240); }
 .form-row input.form-control:focus { border-radius: 0;border-color:#1991eb;  }
 .charts-statistics .checkbox-inline { font-weight: 500;margin-top: 6px; }
-.charts-statistics .checkbox-inline .mail { margin-left: 20px; margin-right: 12px;}
+.charts-statistics .checkbox-inline .mail { margin-left: -4px; margin-right: 3px;}
 .right-content .price{ font-size:30px;line-height: 30px;margin-bottom: 20px; color: #fff;display: inline-block; font-weight: 600;}
 .right-content .mat-flat-button{ display: block;
     font-size: 18px;
@@ -344,6 +345,10 @@ mat-header-cell{
 .mat-header-cell {border: none;  }
 td.mat-cell{border: none;}
 mat-row:nth-child(even) { background:#f2f2f2;}
+.content-chart h4{ color: #6600ff;padding-top: 15px;font-weight: bold;text-align: center; }
+.row{display: flex;}
+.align-item-center{align-items: center;}
+.col-md-6{width: 50%;}
 
 @media only screen and (max-width: 1200px) {
 .charts-statistics{    max-width: 35% !important; }

@@ -3,7 +3,8 @@
   padding: 0 20px 20px 20px;
 
 }
-.mat-list-item-content svg{ width: 30px; }
+.mat-list-item-content{padding: 0 !important;}
+.mat-list-item-content svg{ width:60px; }
 .material-icons {     font-size: 26px; }
 .mat-list-base .mat-list-item:first-child{ margin-top: 8px; }
 .mat-list-base .mat-list-item.home-icon { margin-top: 15px; }

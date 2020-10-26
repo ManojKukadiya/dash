@@ -143,12 +143,17 @@
           </div>
         </div>
       </div>
-      <div class="charts-statistics"   fxFlex="35" >
+      <div class="charts-statistics"   fxFlex="43" >
         <div class="heading" >
           Search Result : 9234 Prospects
         </div>
-        <app-charts></app-charts>
-      <div class="form-right-chart"> 
+        <div class="row content-chart">
+          <div class="col-md-6">
+            <h4 >Monthly review</h4>
+            <app-charts></app-charts>
+          </div>
+          <div class="col-md-6">
+             <div class="form-right-chart"> 
             <h4 >Optimise Your cost</h4>
           <form>
             <div class="form-row">
@@ -162,7 +167,8 @@
             
             
              <span class="checkbox-inline">
-               Inclusion
+              <div>Inclusion</div>
+               
               <label class="checkbox-inline mail">
                 <input type="checkbox" value="" checked>Email
               </label>
@@ -173,12 +179,14 @@
                 
           </form>
         </div>
-         <div class="right-content">
-          <div style="display: block;font-weight: 500;">
-           Rs: <span class="price">18980</span>
-           <button  mat-flat-button>Place Order</button>
           </div>
-          <div class="content-below">
+        </div>
+        
+     
+         <div class="right-content">
+          <div class="row align-item-center">
+            <div class="col-md-6"> 
+                <div class="content-below">
            <small>
             Tat : 15mins <br>
             Once order is placed, we will validate the emails
@@ -187,6 +195,17 @@
               be emailed to your registered email id
            </small> 
           </div>
+            </div>
+            <div class="col-md-6">
+               <div style="display: block;font-weight: 500;">
+           Rs: <span class="price">18980</span>
+           <button  mat-flat-button>Place Order</button>
+          </div>
+            </div>
+            
+          </div>
+         
+        
         </div>
       </div>
      
