@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, AfterViewInit, OnDestroy, OnChanges } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import {Subscription} from 'rxjs';
 
@@ -25,25 +25,25 @@ export interface Companies {
 }
 
 const SEARCH_DATA: Companies[] = [
-  {contact: 'Pat Hurm', name: 'Apple Ince', title: 'CEO', phone: '(812) 479-5447', email: 'test@email.com', imageUrl: '../../../assets/01.jpg',contactUrl: '../../../assets/02.jpg'},
-  {contact: 'Pat Hurm', name: 'Apple Ince', title: 'CEO', phone: '(812) 479-5447', email: 'test@email.com', imageUrl: '../../../assets/01.jpg',contactUrl: '../../../assets/03.jpg'},
-  {contact: 'Pat Hurm', name: 'Apple Ince', title: 'CEO', phone: '(812) 479-5447', email: 'test@email.com', imageUrl: '../../../assets/01.jpg',contactUrl: '../../../assets/02.jpg'},
-  {contact: 'Pat Hurm', name: 'Apple Ince', title: 'CEO', phone: '(812) 479-5447', email: 'test@email.com', imageUrl: '../../../assets/01.jpg',contactUrl: '../../../assets/02.jpg'},
-  {contact: 'Pat Hurm', name: 'Apple Ince', title: 'CEO', phone: '(812) 479-5447', email: 'test@email.com', imageUrl: '../../../assets/01.jpg',contactUrl: '../../../assets/02.jpg'},
-  {contact: 'Pat Hurm', name: 'Apple Ince', title: 'CEO', phone: '(812) 479-5447', email: 'test@email.com', imageUrl: '../../../assets/01.jpg',contactUrl: '../../../assets/03.jpg'},
-  {contact: 'Pat Hurm', name: 'Apple Ince', title: 'CEO', phone: '(812) 479-5447', email: 'test@email.com', imageUrl: '../../../assets/01.jpg',contactUrl: '../../../assets/03.jpg'},
-  {contact: 'Pat Hurm', name: 'Apple Ince', title: 'CEO', phone: '(812) 479-5447', email: 'test@email.com', imageUrl: '../../../assets/01.jpg',contactUrl: '../../../assets/03.jpg'},
-  {contact: 'Pat Hurm', name: 'Apple Ince', title: 'CEO', phone: '(812) 479-5447', email: 'test@email.com', imageUrl: '../../../assets/01.jpg',contactUrl: '../../../assets/02.jpg'},
-  {contact: 'Pat Hurm', name: 'Apple Ince', title: 'CEO', phone: '(812) 479-5447', email: 'test@email.com', imageUrl: '../../../assets/01.jpg',contactUrl: '../../../assets/02.jpg'},
-  {contact: 'Pat Hurm', name: 'Apple Ince', title: 'CEO', phone: '(812) 479-5447', email: 'test@email.com', imageUrl: '../../../assets/01.jpg',contactUrl: '../../../assets/02.jpg'},
-  {contact: 'Pat Hurm', name: 'Apple Ince', title: 'CEO', phone: '(812) 479-5447', email: 'test@email.com', imageUrl: '../../../assets/01.jpg',contactUrl: '../../../assets/02.jpg'},
-  {contact: 'Pat Hurm', name: 'Apple Ince', title: 'CEO', phone: '(812) 479-5447', email: 'test@email.com', imageUrl: '../../../assets/01.jpg',contactUrl: '../../../assets/03.jpg'},
-  {contact: 'Pat Hurm', name: 'Apple Ince', title: 'CEO', phone: '(812) 479-5447', email: 'test@email.com', imageUrl: '../../../assets/01.jpg',contactUrl: '../../../assets/03.jpg'},
-  {contact: 'Pat Hurm', name: 'Apple Ince', title: 'CEO', phone: '(812) 479-5447', email: 'test@email.com', imageUrl: '../../../assets/01.jpg',contactUrl: '../../../assets/03.jpg'},
-  {contact: 'Pat Hurm', name: 'Apple Ince', title: 'CEO', phone: '(812) 479-5447', email: 'test@email.com', imageUrl: '../../../assets/01.jpg',contactUrl: '../../../assets/02.jpg'},
-  {contact: 'Pat Hurm', name: 'Apple Ince', title: 'CEO', phone: '(812) 479-5447', email: 'test@email.com', imageUrl: '../../../assets/01.jpg',contactUrl: '../../../assets/02.jpg'},
-  {contact: 'Pat Hurm', name: 'Apple Ince', title: 'CEO', phone: '(812) 479-5447', email: 'test@email.com', imageUrl: '../../../assets/01.jpg',contactUrl: '../../../assets/02.jpg'},
-  {contact: 'Pat Hurm', name: 'Apple Ince', title: 'CEO', phone: '(812) 479-5447', email: 'test@email.com', imageUrl: '../../../assets/01.jpg',contactUrl: '../../../assets/03.jpg'},
+  {contact: 'Pat Hurm', name: 'Apple Ince', title: 'CEO', phone: '(812) 479-5447', email: 'test@email.com', imageUrl: '../../../assets/01.png',contactUrl: '../../../assets/02.png'},
+  {contact: 'Pat Hurm', name: 'Apple Ince', title: 'CEO', phone: '(812) 479-5447', email: 'test@email.com', imageUrl: '../../../assets/01.png',contactUrl: '../../../assets/03.png'},
+  {contact: 'Pat Hurm', name: 'Apple Ince', title: 'CEO', phone: '(812) 479-5447', email: 'test@email.com', imageUrl: '../../../assets/01.png',contactUrl: '../../../assets/02.png'},
+  {contact: 'Pat Hurm', name: 'Apple Ince', title: 'CEO', phone: '(812) 479-5447', email: 'test@email.com', imageUrl: '../../../assets/01.png',contactUrl: '../../../assets/02.png'},
+  {contact: 'Pat Hurm', name: 'Apple Ince', title: 'CEO', phone: '(812) 479-5447', email: 'test@email.com', imageUrl: '../../../assets/01.png',contactUrl: '../../../assets/02.png'},
+  {contact: 'Pat Hurm', name: 'Apple Ince', title: 'CEO', phone: '(812) 479-5447', email: 'test@email.com', imageUrl: '../../../assets/01.png',contactUrl: '../../../assets/03.png'},
+  {contact: 'Pat Hurm', name: 'Apple Ince', title: 'CEO', phone: '(812) 479-5447', email: 'test@email.com', imageUrl: '../../../assets/01.png',contactUrl: '../../../assets/03.png'},
+  {contact: 'Pat Hurm', name: 'Apple Ince', title: 'CEO', phone: '(812) 479-5447', email: 'test@email.com', imageUrl: '../../../assets/01.png',contactUrl: '../../../assets/03.png'},
+  {contact: 'Pat Hurm', name: 'Apple Ince', title: 'CEO', phone: '(812) 479-5447', email: 'test@email.com', imageUrl: '../../../assets/01.png',contactUrl: '../../../assets/02.png'},
+  {contact: 'Pat Hurm', name: 'Apple Ince', title: 'CEO', phone: '(812) 479-5447', email: 'test@email.com', imageUrl: '../../../assets/01.png',contactUrl: '../../../assets/02.png'},
+  {contact: 'Pat Hurm', name: 'Apple Ince', title: 'CEO', phone: '(812) 479-5447', email: 'test@email.com', imageUrl: '../../../assets/01.png',contactUrl: '../../../assets/02.png'},
+  {contact: 'Pat Hurm', name: 'Apple Ince', title: 'CEO', phone: '(812) 479-5447', email: 'test@email.com', imageUrl: '../../../assets/01.png',contactUrl: '../../../assets/02.png'},
+  {contact: 'Pat Hurm', name: 'Apple Ince', title: 'CEO', phone: '(812) 479-5447', email: 'test@email.com', imageUrl: '../../../assets/01.png',contactUrl: '../../../assets/03.png'},
+  {contact: 'Pat Hurm', name: 'Apple Ince', title: 'CEO', phone: '(812) 479-5447', email: 'test@email.com', imageUrl: '../../../assets/01.png',contactUrl: '../../../assets/03.png'},
+  {contact: 'Pat Hurm', name: 'Apple Ince', title: 'CEO', phone: '(812) 479-5447', email: 'test@email.com', imageUrl: '../../../assets/01.png',contactUrl: '../../../assets/03.png'},
+  {contact: 'Pat Hurm', name: 'Apple Ince', title: 'CEO', phone: '(812) 479-5447', email: 'test@email.com', imageUrl: '../../../assets/01.png',contactUrl: '../../../assets/02.png'},
+  {contact: 'Pat Hurm', name: 'Apple Ince', title: 'CEO', phone: '(812) 479-5447', email: 'test@email.com', imageUrl: '../../../assets/01.png',contactUrl: '../../../assets/02.png'},
+  {contact: 'Pat Hurm', name: 'Apple Ince', title: 'CEO', phone: '(812) 479-5447', email: 'test@email.com', imageUrl: '../../../assets/01.png',contactUrl: '../../../assets/02.png'},
+  {contact: 'Pat Hurm', name: 'Apple Ince', title: 'CEO', phone: '(812) 479-5447', email: 'test@email.com', imageUrl: '../../../assets/01.png',contactUrl: '../../../assets/03.png'},
 ];
 
 @Component({
@@ -82,7 +82,8 @@ export class ContactSearchComponent implements OnInit, OnDestroy {
     this.dialog.open(LoadDialogComponent, {
       data: {
         animal: 'panda'
-      }
+      },
+      panelClass: 'my-dialog-load',
     });
   }
 

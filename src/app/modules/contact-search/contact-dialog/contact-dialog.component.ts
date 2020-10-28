@@ -308,4 +308,24 @@ export class ContactDialogComponent implements OnInit {
     this.matDialogRef.close();
   }
 
+  clearFilters(completed: false){
+    this.allAgricultureComplete = completed;
+    this.allMiningComplete = completed;
+    this.allRetailComplete = completed;
+    this.allTransportationComplete = completed;
+    this.allWholesaleComplete = completed;
+    this.allManufacturingComplete = completed;
+    this.allConstructionComplete = completed;
+    if (this.agricultureTask.subtasks == null) {
+      return;
+    }
+    this.agricultureTask.subtasks.forEach(t => t.completed = completed);
+    this.miningTask.subtasks.forEach(t => t.completed = completed);
+    this.retailTask.subtasks.forEach(t => t.completed = completed);
+    this.wholesaleTask.subtasks.forEach(t => t.completed = completed);
+    this.transportationTask.subtasks.forEach(t => t.completed = completed);
+    this.manufacturingTask.subtasks.forEach(t => t.completed = completed);
+    this.constructionTask.subtasks.forEach(t => t.completed = completed);
+  }
+
 }

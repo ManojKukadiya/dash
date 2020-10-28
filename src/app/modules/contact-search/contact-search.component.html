@@ -68,7 +68,7 @@
         <mat-icon mat-list-icon>check</mat-icon>
         <div mat-line *ngIf="sidenavWidth > 4">Save Filters</div>
       </mat-list-option> -->
-      <mat-list-option class="btClearFilters">
+      <mat-list-option class="btClearFilters" [matTooltip]="sidenavWidth > 4 ? null : 'Clear all Filters'" matTooltipPosition="right">
         <mat-icon mat-list-icon>clear</mat-icon>
         <div mat-line *ngIf="sidenavWidth > 4">Clear all Filters</div>
       </mat-list-option>
@@ -143,7 +143,7 @@
           </div>
         </div>
       </div>
-      <div class="charts-statistics"   fxFlex="43" >
+      <div class="charts-statistics"   fxFlex="35" >
         <div class="heading" >
           Search Result : 9234 Prospects
         </div>
