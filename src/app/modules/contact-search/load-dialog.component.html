@@ -1,11 +1,8 @@
 
 
 <div mat-dialog-content class="common-popup">
-  <!-- button class="close" mat-button (click)="onNoClick()">X</button -->
   <div class="dialog-header">
-    <button mat-button class="close-icon" mat-dialog-close="true">
-      <mat-icon>close</mat-icon>
-    </button>
+    <button class="dialog-header" mat-button mat-dialog-close (click)="clearload()">X</button>
     <h1 mat-dialog-title>Load Dialog</h1>
   </div>
  <mat-divider></mat-divider>

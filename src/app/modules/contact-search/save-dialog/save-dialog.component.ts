@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import {MatDialog, MAT_DIALOG_DATA,MatDialogModule } from '@angular/material/dialog';
+import {MatDialog, MAT_DIALOG_DATA,MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 
 export interface DialogData {
   animal: 'panda' | 'unicorn' | 'lion';
@@ -12,9 +12,14 @@ export interface DialogData {
   styleUrls: ['./save-dialog.component.css']
 })
 export class SaveDialogComponent implements OnInit {
-
-  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+  private readonly matDialogRef: MatDialogRef<SaveDialogComponent>;
+  constructor(matDialogRef: MatDialogRef<SaveDialogComponent>,@Inject(MAT_DIALOG_DATA) public data: DialogData) {
+    this.matDialogRef = matDialogRef;
+  }
 
   ngOnInit(): void {
+  }
+  clearsave(): void {
+    this.matDialogRef.close();
   }
 }

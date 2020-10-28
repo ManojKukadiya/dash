@@ -12,10 +12,16 @@ export interface DialogData {
 })
 export class LoadDialogComponent implements OnInit {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+  private readonly matDialogRef: MatDialogRef<LoadDialogComponent>;
+  constructor(matDialogRef: MatDialogRef<LoadDialogComponent>,@Inject(MAT_DIALOG_DATA) public data: DialogData) {
+    this.matDialogRef = matDialogRef;
+  }
 
   ngOnInit(): void {
   }
 
+  clearload(): void {
+    this.matDialogRef.close();
+  }
 }
 
