@@ -21,4 +21,15 @@ h1{font: 500 20px/32px Roboto, "Helvetica Neue", sans-serif;
     color: #fff;text-decoration: none;margin-right: 10px;text-transform: capitalize;display: inline-block;}
 
   .buttons  a.cancel{border: 1px solid #D3DAE3;background-color: transparent;    color: #5D6A7E;}
+  .close-bt{float: right;
+    margin-top: 5px;
+    background: none;
+    /* border: none; */
+    color: #a29e9e;
+    font-weight: bold;
+    border-radius: 15px;
+    width: 25px;
+    height: 25px;
+   border: none !important;;
+    cursor: pointer;}
 

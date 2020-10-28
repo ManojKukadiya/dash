@@ -13,3 +13,14 @@ h1{font: 500 20px/32px Roboto, "Helvetica Neue", sans-serif;
     right: 0;
     transform: translate(50%, -50%);
   }
+.close-bt{float: right;
+    margin-top: 5px;
+    background: none;
+    /* border: none; */
+    color: #a29e9e;
+    font-weight: bold;
+    border-radius: 15px;
+    width: 25px;
+    height: 25px;
+    border: none !important;
+    cursor: pointer;}
