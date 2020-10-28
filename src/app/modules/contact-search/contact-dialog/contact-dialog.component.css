@@ -6,6 +6,9 @@
   margin-left: 10px;
 
 }
+.mat-list-base {
+    margin-top: -20px;
+}
 .clear-bt{ margin-left: 15px; }
 .btn--green.clear-bt { background: transparent;color: #1991EB;border: none; text-decoration: underline;padding: 0;}
 .btn--green.clear-bt:hover{ text-decoration: none; }

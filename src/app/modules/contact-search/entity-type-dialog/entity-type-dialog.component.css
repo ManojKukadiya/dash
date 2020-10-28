@@ -6,6 +6,9 @@
   margin-left: 10px;
 
 }
+.mat-list-base {
+    margin-top: -20px;
+}
 
 .example-list-section {
   overflow: auto;

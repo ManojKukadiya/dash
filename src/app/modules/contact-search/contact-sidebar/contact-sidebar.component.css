@@ -1,6 +1,9 @@
 .mat-list-base {
   padding-top: 0;
 }
+.mat-list-base {
+    margin-top: -20px;
+}
 
 .mat-list-item {
   color: #b1b5c0;
