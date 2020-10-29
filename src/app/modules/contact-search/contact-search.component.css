@@ -353,7 +353,7 @@ mat-header-cell{
     padding: 3px 8px;
     border-radius: 4px;
     text-decoration: none;
-    color: #666;transition: all 0.3s ease;position: relative;padding-right: 35px;font-size: 12px;}
+    color: #666;transition: all 0.3s ease;position: relative;padding-right: 35px;font-size: 11px;}
 .tag-selection a  span { padding: 3px 8px;
     background: #d9d9d9;
     position: absolute;
@@ -365,7 +365,7 @@ mat-header-cell{
 -moz-border-radius-bottomright: 4px;
 border-top-right-radius: 4px;
 border-bottom-right-radius: 4px;
-    color: #000; }   
+    color: #000;    font-size: 11px; }   
 
 .tag-selection a:hover{background: #1991eb; color: #fff;}
 .tag-selection .category { color: #1991eb;padding-left: 10px;border-left: 1px solid #1991eb;margin-right: 14px; }
