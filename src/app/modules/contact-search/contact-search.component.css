@@ -355,6 +355,7 @@ mat-header-cell{
     text-decoration: none;
     color: #666;transition: all 0.3s ease;}
 .tag-selection a:hover{background: #1991eb; color: #fff;}
+.tag-selection .category { color: #1991eb;padding-left: 10px;border-left: 1px solid #1991eb;margin-right: 14px; }
 
 .example-sidenav{
   max-height: 550px;
