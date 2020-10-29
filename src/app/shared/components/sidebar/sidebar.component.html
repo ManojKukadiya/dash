@@ -16,12 +16,12 @@
   <mat-divider></mat-divider> -->
 
   <!-- <h2 matSubheader>Tools</h2> -->
-  <mat-list-item mat-list-item [routerLink]="['/']" routerLinkActive="list-item-active" [matTooltip]="sidebarWidth === 210 ? null : 'SME SCREENER'" matTooltipPosition="right">
+  <mat-list-item mat-list-item [routerLink]="['/contact-search']" routerLinkActive="list-item-active" [matTooltip]="sidebarWidth === 210 ? null : 'SME SCREENER'" matTooltipPosition="right">
     <mat-icon class="side-panel-logo" svgIcon="side-panel-logo" style="width:60px;height: 55px;"></mat-icon>
     <span class="icon-spacer" *ngIf = "sidebarWidth === 210">Contact Search</span>
   </mat-list-item>
 
-  <mat-list-item class="home-icon" [routerLink]="['/dashboard']" routerLinkActive="list-item-active" [matTooltip]="sidebarWidth === 210 ? null : 'Dashboard'" matTooltipClass="example-tooltip-red1"  matTooltipPosition="right">
+  <mat-list-item class="home-icon" [routerLink]="['/']" routerLinkActive="list-item-active" [matTooltip]="sidebarWidth === 210 ? null : 'Dashboard'" matTooltipClass="example-tooltip-red1"  matTooltipPosition="right">
     <mat-icon>home</mat-icon> <span class="icon-spacer" *ngIf = "sidebarWidth === 210">Profile</span>
   </mat-list-item>
 
