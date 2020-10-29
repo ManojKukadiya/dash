@@ -14,7 +14,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'contact-search',
+        redirectTo: 'dashboard',
         pathMatch: 'full'
       },
       {
