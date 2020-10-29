@@ -96,6 +96,7 @@ export class ContactSearchComponent implements OnInit, OnDestroy {
   }
 
   onShowDialog(evt: MouseEvent): void {
+    console.log('click done',evt);
     const target = new ElementRef(evt.currentTarget);
     let rightPos = (target.nativeElement as HTMLElement).getBoundingClientRect().right;
     if (this.sidenavWidth === 4) {
@@ -104,7 +105,6 @@ export class ContactSearchComponent implements OnInit, OnDestroy {
       rightPos += 17;
     }
     const dialogRef = this.dialog.open(ContactDialogComponent, {
-
       data: { trigger: target, leftPos: rightPos },
       backdropClass: 'backdropBackground',
       maxHeight: '80vh',
@@ -120,6 +120,7 @@ export class ContactSearchComponent implements OnInit, OnDestroy {
 
   // Location Dialog
   onShowLocDialog(evt: MouseEvent): void {
+    console.log('click done',evt);
     const target = new ElementRef(evt.currentTarget);
     let rightPos = (target.nativeElement as HTMLElement).getBoundingClientRect().right;
     if (this.sidenavWidth === 4) {
