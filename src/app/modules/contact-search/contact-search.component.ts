@@ -1,5 +1,5 @@
-import { Component, ElementRef, OnInit, ViewChild, AfterViewInit, OnDestroy, OnChanges } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { Component,Inject,HostListener, ElementRef, OnInit, ViewChild, AfterViewInit, OnDestroy, OnChanges } from '@angular/core';
+import { MatDialog,MatDialogRef} from '@angular/material/dialog';
 import {Subscription} from 'rxjs';
 
 import { LocationDialogComponent } from './location-dialog/location-dialog.component';
@@ -65,13 +65,18 @@ export class ContactSearchComponent implements OnInit, OnDestroy {
   isRateLimitReached = false;
 
   showSearcData = false;
-
+  public inited:boolean = false;
+  public dialogRef: MatDialogRef<ContactDialogComponent>;
+  
   // @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
   // @ViewChild(MatSort, { static: false }) sort: MatSort;
 
   constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
+    this.dialogRef?.afterOpened().subscribe(() => {
+      this.inited = true;
+    })
   }
 
   toggleNavWidth() {
@@ -95,6 +100,14 @@ export class ContactSearchComponent implements OnInit, OnDestroy {
     });
   }
 
+  @HostListener('window:click')
+  onNoClick(): void {
+    console.log('calling..');
+    if (this.inited) {
+      this.dialogRef.close();
+    }
+  }
+
   onShowDialog(evt: MouseEvent): void {
     console.log('click done',evt);
     const target = new ElementRef(evt.currentTarget);
@@ -108,19 +121,18 @@ export class ContactSearchComponent implements OnInit, OnDestroy {
       data: { trigger: target, leftPos: rightPos },
       backdropClass: 'backdropBackground',
       maxHeight: '80vh',
-      autoFocus: false
-    });
-    dialogRef.afterClosed().subscribe( res => {
-      console.log(res);
+      autoFocus: false,
     });
     this.industrySub = dialogRef.componentInstance.flitersChanged.subscribe(filters => {
       this.applyFilters(filters);
     });
+    // dialogRef.afterClosed().subscribe( res => {
+    //   this.dialogRef.close();
+    // });
   }
-
+  
   // Location Dialog
   onShowLocDialog(evt: MouseEvent): void {
-    console.log('click done',evt);
     const target = new ElementRef(evt.currentTarget);
     let rightPos = (target.nativeElement as HTMLElement).getBoundingClientRect().right;
     if (this.sidenavWidth === 4) {
@@ -129,19 +141,19 @@ export class ContactSearchComponent implements OnInit, OnDestroy {
       rightPos += 17;
     }
     const dialogRef = this.dialog.open(LocationDialogComponent, {
-
       data: { trigger: target, leftPos: rightPos },
       backdropClass: 'backdropBackground',
       maxHeight: '80vh',
-      autoFocus: false
-    });
-    dialogRef.afterClosed().subscribe( res => {
-      console.log(res);
+      autoFocus: false,
     });
     this.industrySub = dialogRef.componentInstance.flitersChanged.subscribe(filters => {
       this.applyFilters(filters);
     });
+    // this.dialogRef.afterClosed().subscribe( res => {
+    //   this.dialogRef.closeAll();
+    // });
   }
+
 
   // AgeOfFirmDialog
   onShowAgeOfFirmDialog(evt: MouseEvent): void {
