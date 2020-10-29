@@ -81,8 +81,9 @@
       <div   fxFlex >
         <div class="search-data-table">
           <div class="empty-page"  *ngIf="!showSearcData">
+           
             <ul>
-         <li><mat-icon>keyboard_arrow_left</mat-icon>Most searched combination.</li>
+        <h4>Most searched combination.</h4>
             <li><mat-icon>keyboard_arrow_left</mat-icon>MSMEs with proven digital footprints like 'registered with Amazon".</li>
             <li><mat-icon>keyboard_arrow_left</mat-icon>MSMEs who are also Star Exporters.</li>
             <li><mat-icon>keyboard_arrow_left</mat-icon>Dealers & Distributors of Cement, TMT, and other building materials.</li>
@@ -93,7 +94,18 @@
            
            
           </div>
+
           <div class="search-table"  *ngIf="showSearcData">
+            <div class="tag-selection">
+              <a href="#">Plant & Machinery</a>
+              <a href="#">Retail- Food Store</a>
+              <a href="#">HDFC </a>
+              <a href="#">ICICI </a>
+              <a href="#">Delhi- All </a>
+              <a href="#">Pune </a>
+              <a href="#">Chennai</a>
+              
+            </div>
             <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
             
 
@@ -183,29 +195,41 @@
         </div>
         
      
-         <div class="right-content">
+ <div class="right-content">
           <div class="row align-item-center">
             <div class="col-md-6"> 
                 <div class="content-below">
-           <small>
-            Tat : 15mins <br>
-            Once order is placed, we will validate the emails
-              against ZeroBounce, which assures 98% or more
-              email deliverability rate. Once Output is ready, it will
-              be emailed to your registered email id
-           </small> 
+                  Selected Volume: <span class="big-text">2250</span><br>
+<span class="small-text">Less:free Credit</span>: 1000
+
+<hr>
+
+ Final Volume: <span class="big-text">2250</span><br>
+<span class="big-text">Final Amount Rs: 4500</span><br>
+<small>(including taxes)</small>
+
+         
           </div>
             </div>
             <div class="col-md-6">
-               <div style="display: block;font-weight: 500;">
-           Rs: <span class="price">18980</span>
-           <button  mat-flat-button>Place Order</button>
+               <div class="yellow-bt">
+         
+           <button  mat-flat-button>
+            <span>Order Now </span>
+          TAT: 15mins</button>
           </div>
             </div>
             
           </div>
          
         
+        </div>
+        <div class="desription-text">
+          Tat : 15mins
+            Once order is placed, we will validate the emails
+              against ZeroBounce, which assures 98% or more
+              email deliverability rate. Once Output is ready, it will
+              be emailed to your registered email id
         </div>
       </div>
      
